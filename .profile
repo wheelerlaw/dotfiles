@@ -18,4 +18,6 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
+export VISUAL=nano
+export EDITOR="$VISUAL"
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
