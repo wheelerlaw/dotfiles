@@ -16,11 +16,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [ -f "$HOME/.local/share/profile" ]; then
+    . "$HOME/.local/share/profile"
+fi
+
+
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/.npm/bin:$PATH"
 export VISUAL=nano
 export EDITOR="$VISUAL"
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
-export PATH="$HOME/.npm/bin:$PATH"
 source "$HOME/.cargo/env"
 stty -ixon
