@@ -3,14 +3,17 @@ You know what it is
 
 # Usage
 
-To copy files to the repo out of the home directory:
+Summarized and customized from [this](https://www.atlassian.com/git/tutorials/dotfiles) guide. 
 
-```shell script
-dotsync toRepo
+Make sure depenencies are installed:
+
+```shell
+dnf install -y git findutils
 ```
 
-To copy files from the repo into the home directory:
+Run this installer:
 
-```shell script
-dotsync fromRepo
+```shell
+curl -Lks https://dotfiles.steele.co/dotfiles-setup | /bin/bash
 ```
+

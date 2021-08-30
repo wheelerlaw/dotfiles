@@ -1,0 +1,6 @@
+[push]
+	default = current
+[core]
+	excludesfile = ~/.config/gitignore
+[init]
+	defaultBranch = main

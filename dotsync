@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [ "$1" == toRepo ]; then
-    rsync -av --files-from=$HOME/.dotsyncfiles ~/ ./
-elif [ "$1" == fromRepo ]; then
-    rsync -av --files-from=.dotsyncfiles ./ ~/
-else
-    echo "Usage: $0 (toRepo|fromRepo)"
-fi

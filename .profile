@@ -23,8 +23,8 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-PATH="$HOME/.npm/bin:$PATH"
 export VISUAL=nano
 export EDITOR="$VISUAL"
+export PATH="$HOME/.npm/bin:$PATH"
 source "$HOME/.cargo/env"
 stty -ixon

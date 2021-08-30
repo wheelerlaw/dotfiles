@@ -1,2 +1,15 @@
-.idea/
-*.iml
+*
+!.gitignore
+
+!.bash_aliases
+!.bash_completion
+!.bashrc
+!.dotfiles
+!.gitattributes
+!.gitconfig
+!.profile
+!.npmrc
+!.config
+.config/*
+!.config/gitignore
+!dotfiles-setup
