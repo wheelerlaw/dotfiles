@@ -4,3 +4,9 @@
 	excludesfile = ~/.config/gitignore
 [init]
 	defaultBranch = main
+[filesystem "Red Hat, Inc.|1.8.0_275|/dev/mapper/luks-4b42b133-fbb3-449f-995c-1d34e64e823d"]
+        timestampResolution = 1001 microseconds
+        minRacyThreshold = 0 nanoseconds
+[user]
+        email = wheeler@redhat.com
+        name = Wheeler Law
