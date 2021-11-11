@@ -26,5 +26,6 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export VISUAL=nano
 export EDITOR="$VISUAL"
 export PATH="$HOME/.npm/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1  # MacOS thing
 source "$HOME/.cargo/env"
 stty -ixon
