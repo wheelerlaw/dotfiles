@@ -27,5 +27,6 @@ export VISUAL=nano
 export EDITOR="$VISUAL"
 export PATH="$HOME/.npm/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1  # MacOS thing
+#export DOCKER_HOST="/run/user/$(id -u $USER)/podman/podman.sock"
 source "$HOME/.cargo/env"
 stty -ixon
