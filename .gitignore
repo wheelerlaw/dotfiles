@@ -4,6 +4,7 @@
 !.bash_aliases
 !.bash_completion
 !.bashrc
+!.complete_alias
 !.dotfiles
 !.gitattributes
 !.gitconfig
