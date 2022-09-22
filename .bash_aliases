@@ -11,6 +11,7 @@ alias ga='git add -A'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gb='git branch'
+alias gd='git diff'
 
 alias gradlew='./gradlew'
 
