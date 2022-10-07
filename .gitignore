@@ -13,5 +13,4 @@
 !.config
 .config/*
 !.config/gitignore
-!dotfiles-setup
 !setup
