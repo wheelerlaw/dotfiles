@@ -14,6 +14,6 @@ dnf install -y git findutils
 Run this installer:
 
 ```shell
-curl -Ls https://dotfiles.steele.co/dotfiles-setup | /bin/bash
+curl -Ls https://wheelerlaw.github.io/dotfiles/setup | /bin/bash
 ```
 
