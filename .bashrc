@@ -137,6 +137,5 @@ fi
 
 stty -ixon
 
-export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -s "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
