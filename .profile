@@ -18,22 +18,25 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -f "$HOME/.local/share/profile" ]; then
-    . "$HOME/.local/share/profile"
+if [ -f "$HOME/.local/etc/profile" ]; then
+    . "$HOME/.local/etc/profile"
 fi
 
 
 # set PATH so it includes user's private bin directories
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export VISUAL=nano
 export EDITOR="$VISUAL"
-export PATH="$HOME/.npm/bin:$PATH"
+
+# Environment var changes
 export BASH_SILENCE_DEPRECATION_WARNING=1  # MacOS thing
 #export DOCKER_HOST="/run/user/$(id -u $USER)/podman/podman.sock"
-eval "$(/home/wheeler/.linuxbrew/bin/brew shellenv)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Path additions
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.npm/bin:$PATH"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-. "$HOME/.cargo/env"
+# Shell additions
+[[ -s "$HOME/.linuxbrew/bin/brew" ]] && eval "$(/home/wheeler/.linuxbrew/bin/brew shellenv)"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

@@ -3,7 +3,6 @@
 !.bash_completion
 !.bashrc
 !.complete_alias
-!.config
 .config/*
 !.config/gitignore
 !.dotfiles
@@ -14,3 +13,4 @@
 !.npmrc
 !.profile
 !setup
+!test-file
