@@ -30,5 +30,10 @@ export EDITOR="$VISUAL"
 export PATH="$HOME/.npm/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1  # MacOS thing
 #export DOCKER_HOST="/run/user/$(id -u $USER)/podman/podman.sock"
-source "$HOME/.cargo/env"
 eval "$(/home/wheeler/.linuxbrew/bin/brew shellenv)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+. "$HOME/.cargo/env"

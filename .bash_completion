@@ -21,3 +21,5 @@ _kube_namespaces()
 }
 
 complete -F _kube_namespaces kubens
+
+eval "$(kubectl completion bash)"

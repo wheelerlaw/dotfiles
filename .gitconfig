@@ -4,3 +4,5 @@
 	excludesfile = ~/.config/gitignore
 [init]
 	defaultBranch = main
+[include]
+    path = ~/.local/etc/gitconfig
