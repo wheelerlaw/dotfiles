@@ -35,8 +35,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1  # MacOS thing
 # Path additions
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.npm/bin:$PATH"
+export PATH="$PATH:/home/wheeler/.local/share/JetBrains/Toolbox/scripts"
 
 # Shell additions
-[[ -s "$HOME/.linuxbrew/bin/brew" ]] && eval "$(/home/wheeler/.linuxbrew/bin/brew shellenv)"
+[[ -s "/home/linuxbrew/.linuxbrew/bin/brew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
