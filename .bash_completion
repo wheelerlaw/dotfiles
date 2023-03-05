@@ -22,4 +22,6 @@ _kube_namespaces()
 
 complete -F _kube_namespaces kubens
 
-eval "$(kubectl completion bash)"
+[[ $(which kubectl 2> /dev/null) ]] && eval "$(kubectl completion bash)"
+[[ $(which helm 2> /dev/null) ]] && eval "$(helm completion bash)"
+[[ $(which kind 2> /dev/null) ]] && eval "$(kind completion bash)"

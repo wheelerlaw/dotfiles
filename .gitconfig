@@ -12,4 +12,3 @@
 	helper = !/usr/bin/op plugin run gh -- auth git-credential
 [include]
     path = ~/.local/etc/gitconfig
-
