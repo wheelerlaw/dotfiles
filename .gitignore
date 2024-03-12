@@ -1,3 +1,5 @@
+# .gitignore for dotfiles
+# user .gitignore is located at ~/.config/gitignore
 *
 !.bash_aliases
 !.bash_completion

@@ -12,7 +12,9 @@ alias gcob='git checkout -b'
 alias gb='git branch'
 alias gd='git diff'
 
-
+alias gradlew='./gradlew'
 alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
+alias tf="terraform"
+alias p="podman"
