@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ##  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ##  automagical shell alias completion;
@@ -1058,5 +1058,5 @@ __compal__main
 #complete -F _complete_alias myalias3
 
 ##  to complete all aliases, run this line after all aliases have been defined;
-complete -F _complete_alias "${!BASH_ALIASES[@]}"
+#complete -F _complete_alias "${!BASH_ALIASES[@]}"
 

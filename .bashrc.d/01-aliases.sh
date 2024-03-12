@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 alias gs='git status'
 alias gpl='git pull'
 alias gpsh='git push'
@@ -13,14 +12,7 @@ alias gcob='git checkout -b'
 alias gb='git branch'
 alias gd='git diff'
 
-alias gradlew='./gradlew'
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
-
-alias tf="terraform"
-
-alias p="podman"

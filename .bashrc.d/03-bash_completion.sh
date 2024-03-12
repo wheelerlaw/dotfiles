@@ -1,8 +1,3 @@
-#!/usr/bin/env bash
-
-# Enable completion of aliases
-. "$HOME/.complete_alias"
-
 # Custom bash completions
 _kube_contexts()
 {
@@ -24,4 +19,7 @@ complete -F _kube_namespaces kubens
 
 [[ $(which kubectl 2> /dev/null) ]] && eval "$(kubectl completion bash)"
 [[ $(which helm 2> /dev/null) ]] && eval "$(helm completion bash)"
-[[ $(which kind 2> /dev/null) ]] && eval "$(kind completion bash)"
+[[ $(which kind 2> /dev/null) ]] && eval "$(kind csouompletion bash)"
+[[ $(which oc 2> /dev/null) ]] && eval "$(oc completion bash)"
+
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
