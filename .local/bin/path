@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+printf %s "$PATH" | while IFS= read -rd: dir || [ -n "$dir" ];
+do
+  echo "$dir"
+done

@@ -11,6 +11,10 @@
 !.gitattributes
 !.gitconfig
 !.gitignore
+!.local
+!.local/bin
+!.local/bin/gh
+!.local/bin/path
 !.nanorc
 !.npmrc
 !.profile

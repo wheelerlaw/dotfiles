@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+PARENT_COMMAND=$(ps $PPID | tail -n 1 | awk "{print \$5}")
+if [[ $PARENT_COMMAND == "op" ]]; then
+    /usr/bin/gh "$@"
+else
+    op plugin run -- gh "$@"
+fi
