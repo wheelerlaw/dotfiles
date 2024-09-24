@@ -6,7 +6,7 @@ if [ -d "$HOME/.dotfiles" ]; then
     die "Dotfiles repo already set up..."
 fi
 
-cd $HOME
+cd "$HOME" || die "Could not change directories to $HOME"
 
 git clone --bare https://github.com/wheelerlaw/dotfiles.git $HOME/.dotfiles
 function dotfiles {
