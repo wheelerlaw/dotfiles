@@ -2,27 +2,36 @@
 
 die() { rc=$?; (( $# )) && echo "$*" >&2; exit "$rc"; }
 
+branch="$1"
+
 if [ -d "$HOME/.dotfiles" ]; then
     die "Dotfiles repo already set up..."
 fi
 
-cd $HOME
+cd "$HOME" || die "Could not change directories to $HOME"
 
-git clone --bare https://github.com/wheelerlaw/dotfiles.git $HOME/.dotfiles
+if [[ -n "$branch" ]]; then
+  git clone -b "$branch" --bare https://github.com/wheelerlaw/dotfiles.git "$HOME/.dotfiles"
+else
+  git clone --bare https://github.com/wheelerlaw/dotfiles.git "$HOME/.dotfiles"
+fi
+
 function dotfiles {
-    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+    /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
 }
 mkdir -p .dotfiles-backup
+
 dotfiles checkout
+
 if [ $? = 0 ]; then
     echo "Checked out dotfiles.";
-    else
-        echo "Backing up pre-existing dotfiles.";
-        conflict_files="$(dotfiles checkout 2>&1 | tail -n +2 | head -n -2 | egrep "^\s+\S" | awk {'print $1'})"
-        echo "Backing up the following files:"
-        echo "$conflict_files"
-        echo "$conflict_files" | xargs dirname | xargs -I{} mkdir -p .dotfiles-backup/{}
-        echo "$conflict_files" | xargs -I{} mv {} .dotfiles-backup/{}
+else
+    echo "Backing up pre-existing dotfiles.";
+    conflict_files="$(dotfiles checkout 2>&1 | tail -n +2 | sed '$d' | sed '$d' | egrep "^\s+\S" | awk {'print $1'})"
+    echo "Backing up the following files:"
+    echo "$conflict_files"
+    echo "$conflict_files" | xargs dirname | xargs -I{} mkdir -p .dotfiles-backup/{}
+    echo "$conflict_files" | xargs -I{} mv {} .dotfiles-backup/{}
 fi;
 dotfiles checkout
 dotfiles config status.showUntrackedFiles no

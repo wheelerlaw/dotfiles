@@ -7,16 +7,30 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Added by Toolbox App
-export PATH="$PATH:/home/wheeler/.local/share/JetBrains/Toolbox/scripts"
+# TODO: check if macOS or Linux
+#export PATH="$PATH:/home/wheeler/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+if ! [[ "$PATH" =~ "$HOME/bin:" ]]; then
+    export PATH="$HOME/bin:$PATH"
 fi
-export PATH
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 
-export PATH="$(go env GOPATH)/bin:$PATH"
+# Set the go path
+if [[ $(which go 2> /dev/null) ]]; then
+    export PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Configure Homebrew
+if [ -s /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+if [ -s /opt/homebrew/bin/brew shellenv) ]; then
+    eval "$(/opt/homebrew/bin/brewshellenv)"
+fi
 
 export VISUAL=nano
 export EDITOR="$VISUAL"
