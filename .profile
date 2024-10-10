@@ -28,8 +28,8 @@ fi
 if [ -s /home/linuxbrew/.linuxbrew/bin/brew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
-if [ -s /opt/homebrew/bin/brew shellenv) ]; then
-    eval "$(/opt/homebrew/bin/brewshellenv)"
+if [ -s /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 export VISUAL=nano
