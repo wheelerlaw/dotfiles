@@ -2,18 +2,27 @@
 
 die() { rc=$?; (( $# )) && echo "$*" >&2; exit "$rc"; }
 
+branch="$1"
+
 if [ -d "$HOME/.dotfiles" ]; then
     die "Dotfiles repo already set up..."
 fi
 
 cd "$HOME" || die "Could not change directories to $HOME"
 
-git clone --bare https://github.com/wheelerlaw/dotfiles.git "$HOME/.dotfiles"
+if [[ -n "$branch" ]]; then
+  git clone -b "$branch" --bare https://github.com/wheelerlaw/dotfiles.git "$HOME/.dotfiles"
+else
+  git clone --bare https://github.com/wheelerlaw/dotfiles.git "$HOME/.dotfiles"
+fi
+
 function dotfiles {
     /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
 }
 mkdir -p .dotfiles-backup
+
 dotfiles checkout
+
 if [ $? = 0 ]; then
     echo "Checked out dotfiles.";
 else
