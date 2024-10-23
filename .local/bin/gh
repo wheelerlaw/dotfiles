@@ -2,7 +2,7 @@
 
 PARENT_COMMAND=$(ps $PPID | tail -n 1 | awk "{print \$5}")
 if [[ $PARENT_COMMAND == "op" ]]; then
-    /usr/bin/gh "$@"
+    "$(which -a gh | head -n2 | tail -n1)" "$@"
 else
     op plugin run -- gh "$@"
 fi
