@@ -8,4 +8,8 @@ if [ -d ~/.zshrc.d ]; then
 fi
 unset rc
 
+# Reload zsh completions
+autoload -Uz compinit
+compinit
+
 PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%% '
