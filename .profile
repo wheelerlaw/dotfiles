@@ -31,3 +31,7 @@ elif [ -d "$HOME/Library/Application Support/JetBrains/Toolbox/scripts" ]; then
     export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 fi
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+if [ -f "$HOME/.local/etc/profile" ]; then
+    . "$HOME/.local/etc/profile"
+fi
