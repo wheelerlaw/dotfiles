@@ -12,5 +12,7 @@
 	helper = !gh auth git-credential
 [include]
     path = ~/.local/etc/gitconfig
+[includeIf "gitdir:~/Repositories/wheeler/"]
+    path = ~/Repositories/wheeler/.gitconfig
 [user]
 	name = Wheeler Law
