@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Check if at least the repository URL is provided
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 [<options>] [--] <repo>"
+    exit 1
+fi
+
+# Initialize variables
+CLONE_OPTIONS=()
+REPO_URL=""
+
+# Parse arguments
+for (( i=1; i<=$#; i++ )); do
+    ARG="${!i}"
+    # Assume the last argument is the repository URL
+    if [ "$i" -eq "$#" ]; then
+        REPO_URL="$ARG"
+    else
+        CLONE_OPTIONS+=("$ARG")
+    fi
+done
+
+# Ensure a repository URL was provided
+if [ -z "$REPO_URL" ]; then
+    echo "Error: No repository URL provided."
+    exit 1
+fi
+
+# Extract components of the repository URL
+if [[ "$REPO_URL" =~ ^https?://([^/]+)/([^/]+)/([^/]+)(\.git)?$ ]]; then
+    # HTTPS format
+    DOMAIN="${BASH_REMATCH[1]}"
+    ORGANIZATION="${BASH_REMATCH[2]}"
+    REPOSITORY="${BASH_REMATCH[3]}"
+elif [[ "$REPO_URL" =~ ^git@([^:]+):([^/]+)/([^/]+)(\.git)?$ ]]; then
+    # SSH format
+    DOMAIN="${BASH_REMATCH[1]}"
+    ORGANIZATION="${BASH_REMATCH[2]}"
+    REPOSITORY="${BASH_REMATCH[3]}"
+else
+    echo "Error: Invalid repository URL format."
+    exit 1
+fi
+
+# Remove the .git suffix from the REPOSITORY variable if it exists
+REPOSITORY="${REPOSITORY%.git}"
+
+# Define the target directory structure
+TARGET_DIR="./${DOMAIN}/${ORGANIZATION}/${REPOSITORY}"
+
+# Create the target directory structure
+mkdir -p "$(dirname "$TARGET_DIR")"
+
+# Clone the repository into the target directory
+git clone "${CLONE_OPTIONS[@]}" "$REPO_URL" "$TARGET_DIR"
+
+# Check if the cloning succeeded
+if [ $? -eq 0 ]; then
+    echo "Repository cloned successfully into $TARGET_DIR"
+else
+    echo "Error: Failed to clone the repository."
+    exit 1
+fi
+

@@ -22,18 +22,20 @@
 !/.local/bin
 !/.local/bin/gh
 !/.local/bin/path
+!/.local/bin/clone
 
 !/.nanorc
 !/.npmrc
 !/.profile
 
-!Repositories
-!Repositories/wheelerlaw
-!Repositories/wheelerlaw/.gitconfig
-!Repositories/Engine
-!Repositories/Engine/.gitconfig
+!/Repositories
+!/Repositories/github.com
+!/Repositories/github.com/wheelerlaw
+!/Repositories/github.com/wheelerlaw/.gitconfig
+!/Repositories/github.com/Engine
+!/Repositories/github.com/Engine/.gitconfig
 
-!setup
+!/setup
 
 !/.zshrc
 !/.zshrc.d
