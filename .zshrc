@@ -13,4 +13,4 @@ autoload -Uz compinit
 compinit
 
 #PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%% '
-PROMPT='%F{green}%n@here%f:%F{blue}%~%f%% '
+PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%% '
