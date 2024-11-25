@@ -1,18 +1,29 @@
+[user]
+	name = Wheeler Law
 [push]
 	default = current
+
+# This is the global gitignore. "~/.gitignore" is the gitignore for the dotfiles *only*
 [core]
 	excludesfile = ~/.config/gitignore
+
 [init]
 	defaultBranch = main
+
+# Use GitHub CLI for credentials, which itself reaches into 1Password for the token
 [credential "https://github.com"]
 	helper =
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
 	helper = !gh auth git-credential
+
+# Local config not to be committed into the dotfiles
 [include]
     path = ~/.local/etc/gitconfig
+
+# Path-based config, used for auth-configuring committer emails based on repo location
 [includeIf "gitdir:~/Repositories/wheeler/"]
     path = ~/Repositories/wheeler/.gitconfig
-[user]
-	name = Wheeler Law
+[includeIf "gitdir:~/Repositories/Engine/"]
+    path = ~/Repositories/Engine/.gitconfig
