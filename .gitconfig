@@ -23,7 +23,7 @@
     path = ~/.local/etc/gitconfig
 
 # Path-based config, used for auth-configuring committer emails based on repo location
-[includeIf "gitdir:~/Repositories/wheeler/"]
-    path = ~/Repositories/wheeler/.gitconfig
-[includeIf "gitdir:~/Repositories/Engine/"]
-    path = ~/Repositories/Engine/.gitconfig
+[includeIf "gitdir:~/Repositories/github.com/wheeler/"]
+    path = ~/Repositories/github.com/wheeler/.gitconfig
+[includeIf "gitdir:~/Repositories/github.com/Engine/"]
+    path = ~/Repositories/github.com/Engine/.gitconfig
