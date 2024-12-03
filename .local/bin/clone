@@ -47,7 +47,7 @@ fi
 REPOSITORY="${REPOSITORY%.git}"
 
 # Define the target directory structure
-TARGET_DIR="./${DOMAIN}/${ORGANIZATION}/${REPOSITORY}"
+TARGET_DIR="$HOME/Repositories/${DOMAIN}/${ORGANIZATION}/${REPOSITORY}"
 
 # Create the target directory structure
 mkdir -p "$(dirname "$TARGET_DIR")"
