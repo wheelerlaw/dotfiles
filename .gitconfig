@@ -25,5 +25,5 @@
 # Path-based config, used for auth-configuring committer emails based on repo location
 [includeIf "gitdir:~/Repositories/github.com/wheeler/"]
     path = ~/Repositories/github.com/wheeler/.gitconfig
-[includeIf "gitdir:~/Repositories/github.com/Engine/"]
-    path = ~/Repositories/github.com/Engine/.gitconfig
+[includeIf "gitdir:~/Repositories/github.com/HotelEngine/"]
+    path = ~/Repositories/github.com/HotelEngine/.gitconfig
