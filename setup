@@ -23,17 +23,15 @@ function dotfiles {
 }
 mkdir -p .dotfiles-backup
 
-dotfiles checkout
-
-if [ $? = 0 ]; then
+if dotfiles checkout; then
     echo "Checked out dotfiles.";
 else
     echo "Backing up pre-existing dotfiles.";
-    conflict_files="$(dotfiles checkout 2>&1 | tail -n +2 | sed '$d' | sed '$d' | egrep "^\s+\S" | awk {'print $1'})"
+    conflict_files="$({ dotfiles checkout 2>&1 || true; } | tail -n +2 | sed '$d' | sed '$d' | egrep "^\s+\S" | awk {'print $1'})"
     echo "Backing up the following files:"
     echo "$conflict_files"
-    echo "$conflict_files" | xargs dirname | xargs -I{} mkdir -p .dotfiles-backup/{}
-    echo "$conflict_files" | xargs -I{} mv {} .dotfiles-backup/{}
+    echo "$conflict_files" | xargs -t dirname | xargs -I{} mkdir -p .dotfiles-backup/{}
+    echo "$conflict_files" | xargs -t -I{} mv {} .dotfiles-backup/{}
 fi;
 dotfiles checkout
 dotfiles config status.showUntrackedFiles no
