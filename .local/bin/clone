@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Check if at least the repository URL is provided
 if [ "$#" -lt 1 ]; then
     echo "Usage: $0 [<options>] [--] <repo>"

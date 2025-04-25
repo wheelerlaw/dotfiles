@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 die() { rc=$?; (( $# )) && echo "$*" >&2; exit "$rc"; }
 
 branch="$1"

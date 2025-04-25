@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 PARENT_COMMAND=$(ps $PPID | tail -n 1 | awk "{print \$5}")
 if [[ $PARENT_COMMAND == "op" || -n $GITHUB_TOKEN ]]; then
     "$(which -a gh | head -n2 | tail -n1)" "$@"
