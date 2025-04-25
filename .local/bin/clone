@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -eo pipefail
 
 # Check if at least the repository URL is provided
 if [ "$#" -lt 1 ]; then

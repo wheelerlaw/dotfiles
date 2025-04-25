@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -eo pipefail
 
 PARENT_COMMAND=$(ps $PPID | tail -n 1 | awk "{print \$5}")
 if [[ $PARENT_COMMAND == "op" || -n $GITHUB_TOKEN ]]; then
