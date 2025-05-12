@@ -18,12 +18,6 @@
 !/.gitconfig
 !/.gitignore
 
-!/.local
-!/.local/bin
-!/.local/bin/gh
-!/.local/bin/path
-!/.local/bin/clone
-
 !/bin
 !/bin/gh
 !/bin/path
