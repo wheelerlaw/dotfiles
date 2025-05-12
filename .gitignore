@@ -24,6 +24,11 @@
 !/.local/bin/path
 !/.local/bin/clone
 
+!/bin
+!/bin/gh
+!/bin/path
+!/bin/clone
+
 !/.nanorc
 !/.npmrc
 !/.profile
