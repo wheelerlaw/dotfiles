@@ -1,15 +1,3 @@
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-elif [ -n "$ZSH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.zshrc" ]; then
-	. "$HOME/.zshrc"
-    fi
-fi
-
 # Set the go path
 if command -v go > /dev/null 2>&1; then
     export PATH="$(go env GOPATH)/bin:$PATH"
@@ -34,4 +22,16 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 if [ -f "$HOME/.local/etc/profile" ]; then
     . "$HOME/.local/etc/profile"
+fi
+
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+elif [ -n "$ZSH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.zshrc" ]; then
+	. "$HOME/.zshrc"
+    fi
 fi
