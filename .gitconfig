@@ -2,11 +2,6 @@
 	name = Wheeler Law
 [push]
 	default = current
-
-# This is the global gitignore. "~/.gitignore" is the gitignore for the dotfiles *only*
-[core]
-	excludesfile = ~/.config/gitignore
-
 [init]
 	defaultBranch = main
 

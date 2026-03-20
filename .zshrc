@@ -1,6 +1,6 @@
 # Reload zsh completions
 autoload -Uz compinit
-compinit
+compinit -u
 
 # User specific aliases and functions
 if [ -d ~/.zshrc.d ]; then
