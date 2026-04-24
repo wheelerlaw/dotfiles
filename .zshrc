@@ -12,5 +12,4 @@ if [ -d ~/.zshrc.d ]; then
 fi
 unset rc
 
-#PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%% '
 PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%% '
