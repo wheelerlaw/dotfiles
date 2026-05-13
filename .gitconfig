@@ -4,6 +4,8 @@
 	default = current
 [init]
 	defaultBranch = main
+[log]
+	date = iso-local
 
 # Use GitHub CLI for credentials, which itself reaches into 1Password for the token
 [credential "https://github.com"]
@@ -15,8 +17,8 @@
 
 # Local config not to be committed into the dotfiles
 [include]
-    path = ~/.local/etc/gitconfig
+	path = ~/.local/etc/gitconfig
 
 # Path-based config, used for auth-configuring committer emails based on repo location
 [includeIf "gitdir:~/Repositories/github.com/"]
-    path = ~/Repositories/github.com/.gitconfig
+	path = ~/Repositories/github.com/.gitconfig
