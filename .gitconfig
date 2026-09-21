@@ -4,6 +4,8 @@
 	default = current
 [init]
 	defaultBranch = main
+[alias]
+	squash-branch = "!f() {\n  base=\"${1:-origin/main}\";\n  mb=$(git merge-base HEAD \"$base\") || exit 1;\n  first=$(git rev-list \"$mb\"..HEAD | tail -1);\n  [ -n \"$first\" ] || { echo \"No commits to squash between HEAD and $base (merge-base $mb)\" >&2; exit 1; }\n  git reset --soft \"$mb\" && git commit -C \"$first\";\n}; f"
 [log]
 	date = iso-local
 
